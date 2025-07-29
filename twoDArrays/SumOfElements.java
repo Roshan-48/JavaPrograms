@@ -1,4 +1,4 @@
-package arrays;
+package twoDArrays;
 
 //import java.util.Iterator;
 
