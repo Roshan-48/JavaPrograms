@@ -9,7 +9,7 @@ public class MakeArrayPositive {
 			for(int i=0;i<arr.length;i++)
 			{
 				if(arr[i]<0)
-					pArr[i]=arr[i]*-1;
+					pArr[i]=arr[i]*(-1);
 				else
 					pArr[i]=arr[i];
 			}
