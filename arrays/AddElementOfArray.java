@@ -14,7 +14,7 @@ public class AddElementOfArray {
 	}
 	
 	public static void addElementAtIndex(int[]arr, int ele, int index) {
-		if(index>=0 && index<arr.length-1) {
+		if(index>=0 && index<=arr.length) {
 			int[] ans = new int[arr.length+1];
 			for(int i=0; i<ans.length; i++) {
 				if(i<index) {

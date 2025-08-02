@@ -7,7 +7,7 @@ public class FrequencyOfElements {
 		
 		for(int i=0; i<result.length; i++) {
 			if(result[i] != -1) {
-				System.out.print(+result[i]+" ");
+				System.out.println(ar[i] + " -> " + result[i]);
 			}
 		}
 	}

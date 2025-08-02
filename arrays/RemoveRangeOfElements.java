@@ -1,4 +1,4 @@
-package arrays;							//Problem in this problem
+package arrays;							
 import java.util.*;
 public class RemoveRangeOfElements {
 	public static void main(String[] args) {
