@@ -1,4 +1,4 @@
-package strings;
+  package strings;
 
 public class PalindromeString {
 	public static void main(String[] args) {
