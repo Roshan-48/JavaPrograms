@@ -23,5 +23,5 @@ public class ContainsSubStringOrNot {
 			}
 		}
 		return check == t.length();
-	}
+	} 
 }
