@@ -2,8 +2,8 @@ package strings;
 
 public class ContainsSubStringOrNot {
 	public static void main(String[] args) {
-		String s = "Aeroplane";
-		System.out.println(contains(s,"plane"));
+		String s = "ssspss";
+		System.out.println(contains(s,"sspss"));
 	}
 	
 	public static boolean contains(String s, String t) {
@@ -13,11 +13,11 @@ public class ContainsSubStringOrNot {
 				check++;
 			}
 			else {
-				if(check==t.length() || s.charAt(i)==t.charAt(0)) {
+				if(check==t.length()) {
 					return true;
 				}
 				else if(check>0) {
-					i--;
+					i-=check;
 					check = 0;
 				}
 			}
