@@ -24,6 +24,7 @@ public class ContainsLogic2 {
 				}
 			}
 		}
+		
 		return false;
 	}
 }

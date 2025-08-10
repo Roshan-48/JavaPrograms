@@ -1,6 +1,6 @@
 package strings;
 
-public class PanagramString {	//A pangram is a sentence containing all letters of the English Alphabet.
+public class PanagramString {	//A pangram is a sentence containing all letters of the Alphabet.
 	public static void main(String[] args) {
 		String s = "The quick brown fox jumps over a lazy dog"; 
 		System.out.println(pangram(s));
