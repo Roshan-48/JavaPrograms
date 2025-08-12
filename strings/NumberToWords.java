@@ -79,7 +79,7 @@ public class NumberToWords {
 		for(int i=0; i<ar.length; i++) {
 			if(ar[i]==val) {
 				return i;
-			}
+			} 
 		}
 		return -1;
 	}
