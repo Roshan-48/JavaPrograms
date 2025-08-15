@@ -13,7 +13,7 @@ public class ReverseWordsOfString {
 		for (int i = 0; i < s.length(); i++) {
 			char ch = s.charAt(i);
 			if(ch != ' ') {
-				temp += ch;
+				temp += ch; 
 			}
 			else {
 				String rev = reverse(temp); 
