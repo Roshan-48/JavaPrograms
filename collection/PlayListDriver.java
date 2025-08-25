@@ -18,9 +18,12 @@ public class PlayListDriver {
         
         p1.showPlaylist();
         p1.removeSong("Kal Ho Naa Ho", "Kal Ho Naa Ho");
-        
+      
         p1.shuffle();
+        p1.showPlaylist();
         p1.nextSong();
-        p1.playNext("Kabira", "Yeh Jawaani Hai Deewani");
+        p1.playNext("Dil Diyan Gallan", "Tiger Zinda Hai");
+        
+        p1.showPlaylist();
 	}
 }

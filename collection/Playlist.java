@@ -137,8 +137,8 @@ public class Playlist {
 	}
 	
 	public int searchSong(String name, String movie) {
-		for(int i=0; i<count; i++) {
-			if(songs[i].getName().equalsIgnoreCase(name) && songs[i].getMovie().equalsIgnoreCase(movie));
+		for(int i=0; i<count;i++) {
+			if(songs[i].getName().equalsIgnoreCase(name) && songs[i].getMovie().equalsIgnoreCase(movie))
 				return i;
 		}
 		return -1;
