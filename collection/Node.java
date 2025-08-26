@@ -6,10 +6,6 @@ public class Node {
 	Node nextRef;
 	Node currRef;
 	
-	private Node() {
-		
-	}
-	
 	public Node(Object o) {
 		val = o;
 		currRef = this;
