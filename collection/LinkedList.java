@@ -23,6 +23,7 @@ public class LinkedList {
 			prior.nextRef = temp;
 			temp.preRef = prior;
 			prior = temp;
+			size++;
 		}
 		return true;
 	}
@@ -101,17 +102,15 @@ public class LinkedList {
 	
 	public boolean addFirst(Object val) {
 		Node temp = new Node(val);
-    	if (head == null) {
-        	head = temp;
-        	prior = temp;
-    	} 
-    	else {
-        	temp.nextRef = head;
-        	head.preRef = temp;
-        	head = temp;
-    	}
-    	size++;
-    	return true;
+	    if (head != null) {
+	        temp.nextRef = head;   
+	        head.preRef = temp;    
+	        head = temp;           
+	    } else {
+	        head = prior = temp;    
+	    }
+	    size++;
+	    return true;
 	}
 	
 	public boolean addLast(Object val) {
@@ -119,51 +118,60 @@ public class LinkedList {
 	}
 	
 	public boolean removeAll(LinkedList ref) {
-		 boolean modified = false;
-		 Node current = ref.head;
-		 while (current != null) {
-		      if (removeVal(current.val)) modified = true;
-		      current = current.next();
-		 }
-		 return modified;
+		Node head = ref.iterate();
+		
+		while(head != null) {
+			if(contains(head.val)) {
+				removeVal(head.val);
+				size--;
+			}
+			head = head.next();
+		}
+		return head==null;
 	}
 	
-	public boolean retainAll(LinkedList ref) {
-		boolean modified = false;
-	    Node current = head;
-	    while (current != null) {
-	        Node next = current.next(); 
-	        if (!ref.contains(current.val)) {
-	            removeVal(current.val);
-	            modified = true;
-	        }
-	        current = next;
-	    }
-	    return modified;
+	public boolean retainAll(LinkedList l) {
+		LinkedList temp = new LinkedList();
+		Node head = l.iterate();
+		
+		while(head != null) {
+			Node ref = containsVal(head.val);
+			if(ref!=null) {
+				temp.addVal(head.val);
+			}
+			head = head.next();
+		}
+		this.head = temp.head;
+		this.prior = temp.prior;
+		return true;
 	}
 	
 	public boolean addAll(LinkedList ref) {
-		 Node current = ref.head;
-		    while (current != null) {
-		        addVal(current.val);
-		        current = current.next();
+		 Node head = ref.iterate();
+		    while (head != null) {
+		        addVal(head.val);
+		        head = head.next();
+		        size++;
 		    }
-		    return true;
+		    return head==null;
 	}
 	
 	public void clear() {
 		 head = null;
 		 prior = null;
-		 size = 0;
 	}
 	
 	public boolean containsAll(LinkedList ref) {
-		 Node current = ref.head;
-		    while (current != null) {
-		        if (!contains(current.val)) return false;
-		        current = current.next();
+		 Node head = ref.head;
+		    while (head != null) {
+		        if (contains(head.val)) {
+		        	 head = head.next();
+		        } 
+		        else {
+		        	break;
+		        }
 		    }
-		    return true;
+		    return head==null;
 	}
 	
 	public String toString() {
@@ -184,5 +192,9 @@ public class LinkedList {
 			return new String(sb);
 		}
 		return "[]";
+	}
+	
+	public Node reverseIterate() {
+		return prior;
 	}
 }
